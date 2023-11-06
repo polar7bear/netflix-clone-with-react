@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+## The Movie DB API 요청을 위한 Axios 인스턴스 생성 및 요청 보내기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Axios란 ?
+- Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리이다.
+- 쉽게 말해서 백엔드랑 프론트엔드랑 통신을 쉽게하기 위해 Ajax와 더불어 사용함.  
 
-## Available Scripts
+<br><br>
+터미널 명령어로 axios 설치하기
 
-In the project directory, you can run:
+```shell
+npm install axios --save
+```
 
-### `npm start`
+#### API 서버로부터 데이터 받아오기
+ex) axios.get("https://api.themoviedb.org/3/trending/all/week")  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<br>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+#### axios 인스턴스화 해주기
 
-### `npm test`
+```javascript
+//axios.js
+import axios from "axios";
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const instance = axios.create({
+    baseURL: "https://api.themoviedb.org/3",
+    params:{
+        api_key: "자신의 api 키 입력",
+        language: "ko-KR"
+    }
+});
 
-### `npm run build`
+export default instance;
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```javascript
+//request.js
+const requests = {
+    fetchNowPlaying: "movie/now_playing",
+    fetchNetflixOriginals: "/discover/tv?with_networks=213",
+    fetchTrending: "/trending/all/week",
+    fetchTopRated: "/movie/top_rated",
+    fetchActionMovie: "/discover/movie?with_genres=28",
+    fetchComedyMovies: "/discover/movie?with_genres=35",
+    fetchHorrorMovies: "/discover/movie?with_genres=27",
+    fetchRomanceMovies: "/discover/movie?with_genres=10749",
+    fetchDocumentaries: "/discover/movie?with_genres=99",
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+export default requests;
+```
