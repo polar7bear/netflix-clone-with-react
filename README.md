@@ -49,3 +49,19 @@ const requests = {
 
 export default requests;
 ```
+
+
+## Styled Component 사용하기
+### Sytled Component란?
+자바스크립트 파일 안에서 css를 처리할 수 있게 해주는 대표적인 라이브러리이다.
+
+### 설치 방법
+with npm
+```shell
+npm install --save styled-components
+```
+
+with yarn
+```
+yarn add styled-components
+```
