@@ -2,7 +2,8 @@
 
 ### Axios란 ?
 - Axios는 브라우저, Node.js를 위한 Promise API를 활용하는 HTTP 비동기 통신 라이브러리이다.
-- 쉽게 말해서 백엔드랑 프론트엔드랑 통신을 쉽게하기 위해 Ajax와 더불어 사용함.  
+- 쉽게 말해서 백엔드랑 프론트엔드랑 통신을 쉽게하기 위해 Ajax와 더불어 사용함.    
+- https://axios-http.com/kr/docs/intro
 
 <br><br>
 터미널 명령어로 axios 설치하기
@@ -53,7 +54,10 @@ export default requests;
 
 ## Styled Component 사용하기
 ### Sytled Component란?
-자바스크립트 파일 안에서 css를 처리할 수 있게 해주는 대표적인 라이브러리이다.
+자바스크립트 파일 안에서 css를 처리할 수 있게 해주는 대표적인 라이브러리이다.  
+https://styled-components.com/docs
+
+
 
 ### 설치 방법
 with npm
