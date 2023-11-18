@@ -69,3 +69,16 @@ with yarn
 ```
 yarn add styled-components
 ```
+
+## React Router Dom이란?
+React Router Dom을 사용하면 웹 앱에서 동적 라우팅을 구현할 수 있다. 라우팅이 실행 중인 앱 외부의 구성에서 처리되는 기존 라우팅 아키텍처와 달리 React Router Dom은 앱 및 플랫폼의 요구 사항에 따라 컴포넌트 기반 라우팅을 용이하게 해준다.
+
+> 리액트는 SPA이기 때문에 하나의 index.html 템플릿 파일을 가지고있음.  
+> 이 하나의 템플릿에 자바스크립트를 이용해서 다른 컴포넌트를 이 index.html 템플릿에 넣으므로 페이지를 변경해주게 된다.  
+> 이 때 이 Router Router Dom 라이브러리가 새 컴포넌트로 라우팅 / 탐색을 하고 렌더링 하는데 도움을 주게 된다.
+
+
+### React Router Dom 설치하기
+```shell
+npm install react-router-dom --save
+```
